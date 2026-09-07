@@ -16,6 +16,8 @@ The project compares multiple regression models and uses XGBoost to develop the 
 
 ## Dataset
 
+The project was developed using a historical NYC job postings dataset. Due to data confidentiality and privacy considerations, the complete dataset is not included in this repository. A sample dataset (sample_nyc_jobs.csv) is provided to demonstrate the data structure and features used in the project.
+
 The dataset contains historical job posting information, including:
 
 - Agency
