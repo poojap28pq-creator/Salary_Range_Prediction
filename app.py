@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import zipfile
 
 # Load models
 salary_from_model = joblib.load('salary_from_model.pkl')
@@ -11,7 +12,11 @@ selected_features_from = joblib.load('selected_features_from.pkl')
 selected_features_to = joblib.load('selected_features_to.pkl')
 
 # Load cleaned dataset
-df = pd.read_csv("cleaned_nyc_jobs.csv")
+
+with zipfile.ZipFile("cleaned_nyc_jobs.zip", "r") as zip_ref:
+    zip_ref.extractall("data")
+
+df = pd.read_csv("data/cleaned_nyc_jobs.csv")
 
 st.title("NYC Job Salary Prediction")
 st.write(
